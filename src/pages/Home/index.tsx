@@ -1,3 +1,12 @@
+import { Banner } from "./components/Banner";
+import { Container } from "./styles";
+
 export function Home() {
-	return <h1>Home</h1>;
+	return (
+		//TODO: container cafés
+		<Container>
+			<Banner />
+			<p>Nossos Cafés</p>
+		</Container>
+	);
 }

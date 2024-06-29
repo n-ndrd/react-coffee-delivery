@@ -37,3 +37,16 @@ export const Location = styled.div`
         font-size: 14px;
     }
 `;
+
+export const Button = styled.button`
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background-color: ${({ theme }) => theme["yellow-light"]};
+    color: ${({ theme }) => theme["yellow-dark"]};
+    border-radius: 6px;
+`;
