@@ -15,9 +15,11 @@ export function Header() {
 					<span>Aracaju, SE</span>
 				</Location>
 
-				<Button type="button">
-					<ShoppingCart weight="fill" size={22} />
-				</Button>
+				<Link to="/details">
+					<Button type="button">
+						<ShoppingCart weight="fill" size={22} />
+					</Button>
+				</Link>
 			</div>
 		</Container>
 	);

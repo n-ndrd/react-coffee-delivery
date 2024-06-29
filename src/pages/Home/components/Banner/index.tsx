@@ -2,11 +2,12 @@ import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import { useTheme } from "styled-components";
 import bannerBackground from "../../../../assets/banner-background.svg";
 import imgCoffee from "../../../../assets/coffee.svg";
-// import { CircleIcon } from "../../../../components/CircleIcon";
+import { CircleIcon } from "../../../../components/CircleIcon";
 import {
 	// CircleIconStyles,
 	ContainerBanner,
-	// ContentList,
+	Content,
+	ContentList,
 	ContentText,
 	SubTitle,
 	Title,
@@ -36,28 +37,27 @@ const items = [
 ];
 
 export function Banner() {
+	const theme = useTheme();
 	return (
 		<ContainerBanner background={bannerBackground}>
-			<ContentText>
-				<Title>Encontre o café perfeito para qualquer hora do dia</Title>
-				<SubTitle>
-					Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
-					hora
-				</SubTitle>
-			</ContentText>
+			<Content>
+				<ContentText>
+					<Title>Encontre o café perfeito para qualquer hora do dia</Title>
+					<SubTitle>
+						Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
+						hora
+					</SubTitle>
+				</ContentText>
 
-			{/* <ContentList>
-				{items.map((data, index) => (
-					<div key={index}>
-						<div>
-							<CircleIconStyles colorCircle={theme[data.color]} />
-							{data.icon}
+				<ContentList>
+					{items.map((data, index) => (
+						<div key={index}>
+							<CircleIcon iconColor={theme[data.color]} icon={data.icon} />
+							<span>{data.label}</span>
 						</div>
-						<CircleIcon iconColor={theme[data.color]} icon={data.icon} />
-						<span>{data.label}</span>
-					</div>
-				))}
-			</ContentList> */}
+					))}
+				</ContentList>
+			</Content>
 
 			<img src={imgCoffee} alt="Coffee" />
 		</ContainerBanner>

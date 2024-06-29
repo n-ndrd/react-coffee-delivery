@@ -12,11 +12,15 @@ export const ContainerBanner = styled.section<{ background: string }>`
     justify-content: center;
 `;
 
-export const ContentText = styled.div`
+export const Content = styled.div`
     display: flex;
+    flex-direction: column;
+    gap: 16px;
+`;
+
+export const ContentText = styled.div`
     align-items: center;
     justify-content: flex-start;
-    flex-direction: column;
     width: 580px;
 `;
 
@@ -39,15 +43,19 @@ export const SubTitle = styled.h2`
 `;
 
 export const ContentList = styled.div`
+    display: grid;
+    grid-template-columns: max-content max-content;
+    
+    div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 2px 12px;
+        margin-left: 0;
+    }
 
+    span{
+        text-align: center;
+    }
 `;
-
-// export const CircleIconStyles = styled.div<{ colorCircle: string }>`
-//     padding: 0.5rem;
-//     border-radius: 50%;
-//     background: ${(props) => props.colorCircle};
-//     color: ${({ theme }) => theme["background"]};
-
-//     display: flex;
-//     align-items: center;
-// `;
