@@ -6,7 +6,7 @@ import { Button, Container, Location } from "./styles";
 export function Header() {
 	return (
 		<Container>
-			<Link to="/home">
+			<Link to="/">
 				<img src={imgLogo} alt="Logo Coffee Delivery" />
 			</Link>
 			<div>

@@ -6,6 +6,6 @@ interface CircleIconProps {
 	iconColor: string;
 }
 
-export function CircleIcon({ icon, iconColor }: CircleIconProps) {
-	return <CircleIconStyles iconColor={iconColor}>{icon}</CircleIconStyles>;
+export function CircleIcon({ icon, iconColor, ...rest }: CircleIconProps) {
+	return <CircleIconStyles iconcolor={iconColor}>{icon}</CircleIconStyles>;
 }

@@ -1,12 +1,30 @@
+import { coffeesDatas } from "../../coffees";
 import { Banner } from "./components/Banner";
-import { Container } from "./styles";
+import { CoffeeCard } from "./components/CoffeeCard";
+import { Coffees, Container, ContainerCoffees } from "./styles";
 
 export function Home() {
 	return (
-		//TODO: container cafés
 		<Container>
 			<Banner />
-			<p>Nossos Cafés</p>
+
+			<ContainerCoffees>
+				<h2>Nossos Cafés</h2>
+
+				<Coffees>
+					{coffeesDatas.map((coffee) => (
+						<CoffeeCard
+							key={coffee.id}
+							id={coffee.id}
+							image={coffee.image}
+							name={coffee.name}
+							description={coffee.description}
+							price={coffee.price}
+							tags={coffee.tags}
+						/>
+					))}
+				</Coffees>
+			</ContainerCoffees>
 		</Container>
 	);
 }

@@ -27,10 +27,10 @@ export const ContentText = styled.div`
 export const Title = styled.h1`
     height: 124px;
     font-family: 'Baloo 2', cursive;
+    color: ${({ theme }) => theme["base-title"]};
     font-size: 44px;
     font-weight: 900;
     line-height: 62.4px;
-    color: ${({ theme }) => theme["base-title"]};
 `;
 
 export const SubTitle = styled.h2`
