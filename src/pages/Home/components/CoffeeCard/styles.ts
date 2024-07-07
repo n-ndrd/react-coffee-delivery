@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CardContainer = styled.div`
     width: 230px;
     height: 280px;
-    background: ${(props) => props.theme["base-card"]};
+    background: ${({ theme }) => theme["base-card"]};
     padding: 1.25rem 1.5rem;
     border-radius: 6px 36px 6px 36px;
 
@@ -18,7 +18,27 @@ export const ImgStyled = styled.img`
     user-select: none;
 `;
 
-export const TagsContainer = styled.div``;
+export const TagsContainer = styled.div`
+    display: flex;
+    margin-top: 12px;
+    gap: 4px;
+`;
+
+export const Tag = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: ${({ theme }) => theme["yellow-light"]};
+    color: ${({ theme }) => theme["yellow-dark"]};
+    height: 21px;
+    padding: 2px 6px;
+    white-space: nowrap;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 13px;
+    border-radius: 100px;
+`;
 
 export const TextContainer = styled.div`
     text-align: center;
@@ -30,7 +50,7 @@ export const Title = styled.strong`
     font-size: 20px;
     font-weight: 700;
     line-height: 26px;
-    color: ${(props) => props.theme["base-subtitle"]};
+    color: ${({ theme }) => theme["base-subtitle"]};
 `;
 
 export const Description = styled.span`
@@ -39,7 +59,7 @@ export const Description = styled.span`
     font-size: 11px;
     line-height: 18.2px;
     margin-top: 8px;
-    color: ${(props) => props.theme["base-label"]};
+    color: ${({ theme }) => theme["base-label"]};
 `;
 
 export const PriceContainer = styled.div`
@@ -57,12 +77,27 @@ export const Price = styled.div`
 `;
 export const Currency = styled.span`
     font-size: 0.875rem;
-    color: ${(props) => props.theme["base-text"]};
+    color: ${({ theme }) => theme["base-text"]};
 `;
 export const PriceValue = styled.div`
     font-family: 'Baloo 2', cursive;
     font-size: 1.5rem;
     font-weight: 800;
     line-height: 1.125rem;
-    color: ${(props) => props.theme["base-text"]};
+    color: ${({ theme }) => theme["base-text"]};
+`;
+
+export const Controls = styled.div``;
+
+export const Button = styled.button`
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background-color: ${({ theme }) => theme["purple-dark"]};
+    color: ${({ theme }) => theme["white"]};
+    border-radius: 6px;
 `;

@@ -1,11 +1,16 @@
+import { ShoppingCart } from "phosphor-react";
+import { QuantitySelector } from "../../../../components/QuantitySelector";
 import {
+	Button,
 	CardContainer,
+	Controls,
 	Currency,
 	Description,
 	ImgStyled,
 	Price,
 	PriceContainer,
 	PriceValue,
+	Tag,
 	TagsContainer,
 	TextContainer,
 	Title,
@@ -36,7 +41,11 @@ export function CoffeeCard({
 		<CardContainer>
 			<ImgStyled src={image} alt={name} />
 
-			<TagsContainer></TagsContainer>
+			<TagsContainer>
+				{tags.map((tag) => (
+					<Tag key={tag}>{tag}</Tag>
+				))}
+			</TagsContainer>
 
 			<TextContainer>
 				<Title>{name}</Title>
@@ -49,18 +58,16 @@ export function CoffeeCard({
 					<PriceValue>{priceFormatted}</PriceValue>
 				</Price>
 
-				{/* <Controls>
-          <SelectQuantity 
-            add={handleAddCoffeeQuantity}
-            remove={handleRemoveCoffeeQuantity}
-            quantity={coffeeQuantity}
-          />
-          <Button
-            buttonType='buy'
-            icon={<ShoppingCartSimple weight='fill' size={22} />}
-            onClick={addCoffeeToCart}
-          />
-        </Controls> */}
+				<Controls>
+					<QuantitySelector
+					// add={}
+					// remove={}
+					// quantity={}
+					/>
+					<Button type="button">
+						<ShoppingCart weight="fill" size={22} />
+					</Button>
+				</Controls>
 			</PriceContainer>
 		</CardContainer>
 	);
