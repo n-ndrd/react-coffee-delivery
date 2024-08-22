@@ -17,7 +17,6 @@ import {
 	Title,
 } from "./styles";
 import { useOrderContext } from "../../../../context/OrderContext";
-import { addProductAction } from "../../../../reducers/order/actions";
 
 interface CoffeeCardProps {
 	id: number;
