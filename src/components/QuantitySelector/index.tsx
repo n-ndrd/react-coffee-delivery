@@ -12,9 +12,11 @@ export function QuantitySelector({
 	remove,
 	quantity,
 }: QuantitySelectorProps) {
-	<Container>
-		<Minus weight="fill" size={14} onClick={remove} type="button" />
-		<span>{quantity}</span>
-		<Plus weight="fill" size={14} onClick={add} type="button" />
-	</Container>;
+	return (
+		<Container>
+			<Minus weight="fill" size={14} onClick={remove} type="button" />
+			<span>{quantity}</span>
+			<Plus weight="fill" size={14} onClick={add} type="button" />
+		</Container>
+	);
 }

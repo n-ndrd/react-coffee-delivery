@@ -87,7 +87,12 @@ export const PriceValue = styled.div`
     color: ${({ theme }) => theme["base-text"]};
 `;
 
-export const Controls = styled.div``;
+export const Controls = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+`;
 
 export const Button = styled.button`
     width: 38px;

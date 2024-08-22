@@ -1,4 +1,5 @@
 import { ShoppingCart } from "phosphor-react";
+import { useState } from "react";
 import { QuantitySelector } from "../../../../components/QuantitySelector";
 import {
 	Button,
@@ -33,9 +34,21 @@ export function CoffeeCard({
 	price,
 	tags,
 }: CoffeeCardProps) {
+	const [qtdCoffee, setQtdCoffee] = useState(1);
+
 	const priceFormatted = new Intl.NumberFormat("pt-BR", {
 		minimumFractionDigits: 2,
 	}).format(price);
+
+	function handleAddCoffeeQuantity() {
+		setQtdCoffee((state) => state + 1);
+	}
+
+	function handleRemoveCoffeeQuantity() {
+		if (qtdCoffee === 1) return;
+
+		setQtdCoffee((state) => state - 1);
+	}
 
 	return (
 		<CardContainer>
@@ -60,9 +73,9 @@ export function CoffeeCard({
 
 				<Controls>
 					<QuantitySelector
-					// add={}
-					// remove={}
-					// quantity={}
+						add={handleAddCoffeeQuantity}
+						remove={handleRemoveCoffeeQuantity}
+						quantity={qtdCoffee}
 					/>
 					<Button type="button">
 						<ShoppingCart weight="fill" size={22} />
