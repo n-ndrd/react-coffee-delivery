@@ -16,6 +16,8 @@ import {
 	TextContainer,
 	Title,
 } from "./styles";
+import { useOrderContext } from "../../../../context/OrderContext";
+import { addProductAction } from "../../../../reducers/order/actions";
 
 interface CoffeeCardProps {
 	id: number;
@@ -27,7 +29,7 @@ interface CoffeeCardProps {
 }
 
 export function CoffeeCard({
-	// id,
+	id,
 	image,
 	description,
 	name,
@@ -35,6 +37,7 @@ export function CoffeeCard({
 	tags,
 }: CoffeeCardProps) {
 	const [qtdCoffee, setQtdCoffee] = useState(1);
+	const { handleAddNewProduct } = useOrderContext();
 
 	const priceFormatted = new Intl.NumberFormat("pt-BR", {
 		minimumFractionDigits: 2,
@@ -48,6 +51,21 @@ export function CoffeeCard({
 		if (qtdCoffee === 1) return;
 
 		setQtdCoffee((state) => state - 1);
+	}
+
+	function addCoffeeInOrder(){
+		const coffee = {
+			id,
+			image,
+			name,
+			price,
+			quantity: qtdCoffee
+		}
+		console.log("🚀 ~ addCoffeeInOrder ~ coffee:", coffee)
+		
+
+		handleAddNewProduct(coffee);
+		setQtdCoffee(1);
 	}
 
 	return (
@@ -77,7 +95,7 @@ export function CoffeeCard({
 						remove={handleRemoveCoffeeQuantity}
 						quantity={qtdCoffee}
 					/>
-					<Button type="button">
+					<Button type="button" onClick={addCoffeeInOrder}>
 						<ShoppingCart weight="fill" size={22} />
 					</Button>
 				</Controls>

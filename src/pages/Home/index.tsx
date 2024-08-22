@@ -1,7 +1,7 @@
 import { coffeesDatas } from "../../coffees";
 import { Banner } from "./components/Banner";
 import { CoffeeCard } from "./components/CoffeeCard";
-import { Coffees, Container, ContainerCoffees } from "./styles";
+import { Coffees, Container, ContainerCoffees, Title } from "./styles";
 
 export function Home() {
 	return (
@@ -9,7 +9,7 @@ export function Home() {
 			<Banner />
 
 			<ContainerCoffees>
-				<h2>Nossos Cafés</h2>
+				<Title>Nossos Cafés</Title>
 
 				<Coffees>
 					{coffeesDatas.map((coffee) => (

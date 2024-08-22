@@ -11,15 +11,23 @@ export const ContainerCoffees = styled.div`
     flex-direction: column;
     flex: 1;
 
-    padding: 32px 232px; 
+    align-items: center;
     background-color: ${({ theme }) => theme["background"]};  
-    
-    h2{ 
-        font-family: 'Baloo 2', cursive;
-        font-size: 30px;
-        font-weight: 800;
-        line-height: 41.6px;
-        color: ${({ theme }) => theme["base-subtitle"]};
+`;
+
+export const Title = styled.h2`
+    width: 100%;
+    padding: 15px 232px; 
+    font-family: 'Baloo 2', cursive;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 41.6px;
+    color: ${({ theme }) => theme["base-subtitle"]};
+
+    @media (max-width: 500px) {
+      align-items: center;
+      padding: 10px;
+      font-size: 1.7rem;
     }
 `;
 
@@ -40,4 +48,5 @@ export const Coffees = styled.div`
 
   @media (max-width: 490px) {
     grid-template-columns: 1fr;
+  }
 `;

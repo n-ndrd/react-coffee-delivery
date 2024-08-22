@@ -16,6 +16,10 @@ export const Container = styled.div`
         justify-content: space-between;
         gap: 12px;
     }
+
+    @media (max-width: 1000px){
+        padding: 10px; 
+    }
 `;
 
 export const Location = styled.div`
