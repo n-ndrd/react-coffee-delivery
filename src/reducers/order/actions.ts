@@ -7,7 +7,7 @@ export enum ActionTypes {
 	DECREMENT_PRODUCT = "DECREMENT_PRODUCT",
 }
 
-export function addProductAction(product: ICoffee) {
+export const addProductAction = (product: ICoffee) => {
 	return {
 		type: ActionTypes.ADD_PRODUCT,
 		payload: {
@@ -15,6 +15,15 @@ export function addProductAction(product: ICoffee) {
 		},
 	};
 }
+
+// export function addProductAction(product: ICoffee) {
+// 	return {
+// 		type: ActionTypes.ADD_PRODUCT,
+// 		payload: {
+// 			product,
+// 		},
+// 	};
+// }
 
 export function removeProductAction(id: number) {
 	return {

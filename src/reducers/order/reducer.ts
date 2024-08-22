@@ -6,12 +6,12 @@ interface OrderState {
 	orderDetails: null; //OrderDetails |
 }
 
-type actionType = {
+type actionType<T = any> = {
 	type: string;
-	payload: any;
+	payload: T;
 };
 
-export function orderReducer(state: OrderState, action: actionType) {
+export function orderReducer(state: OrderState, action: actionType<any>) {
 	switch (action.type) {
 		case ActionTypes.ADD_PRODUCT: {
 			const isAlreadyChoosed = state.products.find(
@@ -50,6 +50,10 @@ export function orderReducer(state: OrderState, action: actionType) {
 				...state,
 				products: newProducts,
 			};
+		}
+
+		default: {
+			return state
 		}
 	}
 }
