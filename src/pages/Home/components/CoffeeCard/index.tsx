@@ -27,7 +27,7 @@ interface CoffeeCardProps {
 }
 
 export function CoffeeCard({
-	id,
+	// id,
 	image,
 	description,
 	name,
