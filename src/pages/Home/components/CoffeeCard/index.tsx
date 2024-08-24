@@ -59,9 +59,7 @@ export function CoffeeCard({
 			name,
 			price,
 			quantity: qtdCoffee
-		}
-		console.log("🚀 ~ addCoffeeInOrder ~ coffee:", coffee)
-		
+		}		
 
 		handleAddNewProduct(coffee);
 		setQtdCoffee(1);
