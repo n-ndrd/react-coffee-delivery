@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.form`
     max-width: 70rem;
-    width: 97%;
-    margin: 2.5rem auto;
+    width: 80%;
+    margin: 40px auto;
 
     display: grid;
     grid-template-columns: 1fr 28rem;
@@ -13,8 +13,6 @@ export const Container = styled.form`
         grid-template-columns: 1fr;
         overflow: hidden;
     }
-
-    
 `;
 
 export const Title = styled.h2`

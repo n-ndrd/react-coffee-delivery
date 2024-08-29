@@ -63,22 +63,29 @@ export const Description = styled.span`
 `;
 
 export const PriceContainer = styled.div`
-    margin-top: 2rem;
+    margin-top: 32px;
     width: 100%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 590px) {
+        margin-top: 16px;
+    }
 `;
+
 export const Price = styled.div`
     display: flex;
     align-items: flex-end;
     gap: 0.25rem;
 `;
+
 export const Currency = styled.span`
     font-size: 0.875rem;
     color: ${({ theme }) => theme["base-text"]};
 `;
+
 export const PriceValue = styled.div`
     font-family: 'Baloo 2', cursive;
     font-size: 1.5rem;
