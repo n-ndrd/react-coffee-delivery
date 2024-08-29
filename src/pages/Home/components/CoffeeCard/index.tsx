@@ -1,6 +1,7 @@
 import { ShoppingCart } from "phosphor-react";
 import { useState } from "react";
 import { QuantitySelector } from "../../../../components/QuantitySelector";
+import { useOrderContext } from "../../../../context/OrderContext";
 import {
 	Button,
 	CardContainer,
@@ -16,7 +17,8 @@ import {
 	TextContainer,
 	Title,
 } from "./styles";
-import { useOrderContext } from "../../../../context/OrderContext";
+
+import { Link } from "react-router-dom";
 
 interface CoffeeCardProps {
 	id: number;
@@ -52,14 +54,14 @@ export function CoffeeCard({
 		setQtdCoffee((state) => state - 1);
 	}
 
-	function addCoffeeInOrder(){
+	function addCoffeeInOrder() {
 		const coffee = {
 			id,
 			image,
 			name,
 			price,
-			quantity: qtdCoffee
-		}		
+			quantity: qtdCoffee,
+		};
 
 		handleAddNewProduct(coffee);
 		setQtdCoffee(1);
@@ -92,9 +94,12 @@ export function CoffeeCard({
 						remove={handleRemoveCoffeeQuantity}
 						quantity={qtdCoffee}
 					/>
-					<Button type="button" onClick={addCoffeeInOrder}>
-						<ShoppingCart weight="fill" size={22} />
-					</Button>
+
+					<Link to="/details">
+						<Button type="button" onClick={addCoffeeInOrder}>
+							<ShoppingCart weight="fill" size={22} />
+						</Button>
+					</Link>
 				</Controls>
 			</PriceContainer>
 		</CardContainer>
