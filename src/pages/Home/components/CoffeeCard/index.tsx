@@ -18,8 +18,6 @@ import {
 	Title,
 } from "./styles";
 
-import { Link } from "react-router-dom";
-
 interface CoffeeCardProps {
 	id: number;
 	image: string;
@@ -62,6 +60,7 @@ export function CoffeeCard({
 			price,
 			quantity: qtdCoffee,
 		};
+		console.log("🚀 ~ addCoffeeInOrder ~ coffee:", coffee);
 
 		handleAddNewProduct(coffee);
 		setQtdCoffee(1);
@@ -95,11 +94,9 @@ export function CoffeeCard({
 						quantity={qtdCoffee}
 					/>
 
-					<Link to="/details">
-						<Button type="button" onClick={addCoffeeInOrder}>
-							<ShoppingCart weight="fill" size={22} />
-						</Button>
-					</Link>
+					<Button type="button" onClick={addCoffeeInOrder}>
+						<ShoppingCart weight="fill" size={22} />
+					</Button>
 				</Controls>
 			</PriceContainer>
 		</CardContainer>

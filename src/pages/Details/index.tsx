@@ -1,11 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import { Cart } from "./components/Cart";
 import { FormAddress } from "./components/Form";
 import { Payment } from "./components/Payment";
-import { Container, Title } from "./styles";
+import { DetailsContainer, Title } from "./styles";
 
 export function Details() {
+	const navigate = useNavigate();
+
+	function handleFormSubmit() {
+		navigate("/order");
+	}
+
 	return (
-		<Container>
+		<DetailsContainer onSubmit={handleFormSubmit}>
 			<div>
 				<Title>Complete seu pedido</Title>
 				<FormAddress />
@@ -16,6 +23,6 @@ export function Details() {
 				<Title>Cafés selecionados</Title>
 				<Cart />
 			</div>
-		</Container>
+		</DetailsContainer>
 	);
 }

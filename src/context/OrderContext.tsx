@@ -12,12 +12,12 @@ import {
 	incrementProductAction,
 	removeProductAction,
 } from "../reducers/order/actions";
-import { orderReducer } from "../reducers/order/reducer";
+import { type OrderDetails, orderReducer } from "../reducers/order/reducer";
 import { INITIAL_ORDER_STATE } from "../reducers/order/utils";
 
 interface OrderContextType {
 	products: ICoffee[];
-	orderDetails: null; //OrderDetails |
+	orderDetails: OrderDetails | null;
 	handleAddNewProduct: (product: ICoffee) => void;
 	handleRemoveProduct: (id: number) => void;
 	handleIncrementProduct: (id: number) => void;
