@@ -47,15 +47,20 @@ export const TextContainer = styled.div`
 
 export const Title = styled.strong`
     font-family: 'Baloo 2', cursive;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 700;
     line-height: 26px;
     color: ${({ theme }) => theme["base-subtitle"]};
+
+    white-space: nowrap;
+
+    @media (max-width: 590px) {
+        font-size: 16px;
+    }
 `;
 
 export const Description = styled.span`
     display: block;
-    /* padding: 0 13px; */
     font-size: 11px;
     line-height: 18.2px;
     margin-top: 8px;
@@ -63,7 +68,7 @@ export const Description = styled.span`
 `;
 
 export const PriceContainer = styled.div`
-    margin-top: 32px;
+    margin-top: 16px;
     width: 100%;
 
     display: flex;
@@ -99,6 +104,8 @@ export const Controls = styled.div`
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+
+    
 `;
 
 export const Button = styled.button`

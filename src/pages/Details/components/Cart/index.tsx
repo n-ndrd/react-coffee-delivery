@@ -1,3 +1,4 @@
+import { useOrderContext } from "../../../../context/OrderContext";
 import { CoffeeList } from "./components/CoffeeList";
 import {
 	Button,
@@ -7,9 +8,19 @@ import {
 } from "./styles";
 
 export function Cart() {
+	const { products } = useOrderContext();
 	return (
 		<FormContainer>
-			<CoffeeList />
+			{products.map((coffee) => (
+				<CoffeeList
+					key={coffee.id}
+					id={coffee.id}
+					image={coffee.image}
+					name={coffee.name}
+					price={coffee.price}
+					quantity={coffee.quantity}
+				/>
+			))}
 
 			<TotalContainer>
 				<PricesContainer>

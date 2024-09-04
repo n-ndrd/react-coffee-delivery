@@ -1,9 +1,16 @@
 import { MapPin, ShoppingCart } from "phosphor-react";
 import { Link } from "react-router-dom";
 import imgLogo from "../../assets/Logo.png";
-import { Button, Container, Location } from "./styles";
+import { useOrderContext } from "../../context/OrderContext";
+import { Button, Container, Location, QuantityIndicator } from "./styles";
 
 export function Header() {
+	const { products } = useOrderContext();
+
+	const totalProductsInOrder = products.reduce((prev, current) => {
+		return prev + current.quantity;
+	}, 0);
+
 	return (
 		<Container>
 			<Link to="/">
@@ -16,6 +23,7 @@ export function Header() {
 				</Location>
 
 				<Link to="/details">
+					<QuantityIndicator>{totalProductsInOrder}</QuantityIndicator>
 					<Button type="button">
 						<ShoppingCart weight="fill" size={22} />
 					</Button>

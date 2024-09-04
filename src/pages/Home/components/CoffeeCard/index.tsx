@@ -35,8 +35,8 @@ export function CoffeeCard({
 	price,
 	tags,
 }: CoffeeCardProps) {
-	const [qtdCoffee, setQtdCoffee] = useState(1);
 	const { handleAddNewProduct } = useOrderContext();
+	const [qtdCoffee, setQtdCoffee] = useState(1);
 
 	const priceFormatted = new Intl.NumberFormat("pt-BR", {
 		minimumFractionDigits: 2,
@@ -60,7 +60,6 @@ export function CoffeeCard({
 			price,
 			quantity: qtdCoffee,
 		};
-		console.log("🚀 ~ addCoffeeInOrder ~ coffee:", coffee);
 
 		handleAddNewProduct(coffee);
 		setQtdCoffee(1);

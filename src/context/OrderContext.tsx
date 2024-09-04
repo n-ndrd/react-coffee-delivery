@@ -49,6 +49,7 @@ export const OrderProvider = ({ children }: OrderContextProviderProps) => {
 	const handleDecrementProduct = useCallback((id: number) => {
 		dispatch(decrementProductAction(id));
 	}, []);
+
 	return (
 		<OrderContext.Provider
 			value={{
